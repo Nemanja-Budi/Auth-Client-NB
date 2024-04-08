@@ -3,20 +3,24 @@ import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ValidationMessagesComponent } from './components/errors/validation-messages/validation-messages.component';
 import { RouterModule } from '@angular/router';
-
+import { NotificationComponent } from './components/modals/notification/notification.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
   declarations: [
     NotFoundComponent,
-    ValidationMessagesComponent
+    ValidationMessagesComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ModalModule.forRoot()
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    ValidationMessagesComponent
   ]
 
 })
