@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../account.service';
-import { Register } from 'src/app/shared/models/register.model';
+import { Register } from 'src/app/shared/models/account/register.model';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import { User } from 'src/app/shared/models/user.model';
+import { User } from 'src/app/shared/models/account/user.model';
 
 @Component({
   selector: 'app-register',

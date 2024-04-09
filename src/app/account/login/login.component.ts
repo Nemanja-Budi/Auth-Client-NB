@@ -2,10 +2,10 @@ import { Component, inject } from '@angular/core';
 import { AccountService } from '../account.service';
 import { SharedService } from 'src/app/shared/shared.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Login } from 'src/app/shared/models/login.model';
+import { Login } from 'src/app/shared/models/account/login.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
-import { User } from 'src/app/shared/models/user.model';
+import { User } from 'src/app/shared/models/account/user.model';
 
 @Component({
   selector: 'app-login',
@@ -71,5 +71,9 @@ export class LoginComponent {
         }
       }
     });
+  }
+
+  resendEmailConfirmationLink(): void {
+    this.router.navigateByUrl('/account/send-email/resend-email-confirmation-link');
   }
 }

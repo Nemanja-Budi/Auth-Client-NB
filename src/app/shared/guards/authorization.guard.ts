@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { AccountService } from 'src/app/account/account.service';
-import { User } from '../models/user.model';
+import { User } from '../models/account/user.model';
 import { SharedService } from '../shared.service';
 
 @Injectable({
