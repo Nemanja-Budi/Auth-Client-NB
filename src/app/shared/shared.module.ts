@@ -5,22 +5,28 @@ import { ValidationMessagesComponent } from './components/errors/validation-mess
 import { RouterModule } from '@angular/router';
 import { NotificationComponent } from './components/modals/notification/notification.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { UserHasRoleDirective } from './directives/user-has-role.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     NotFoundComponent,
     ValidationMessagesComponent,
-    NotificationComponent
+    NotificationComponent,
+    UserHasRoleDirective
   ],
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     ModalModule.forRoot()
   ],
   exports: [
     RouterModule,
-    ValidationMessagesComponent
+    ValidationMessagesComponent,
+    UserHasRoleDirective,
+    ReactiveFormsModule
   ]
 
 })

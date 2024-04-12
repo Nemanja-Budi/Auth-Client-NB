@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AccountRoutingModule } from './account-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { SendEmailComponent } from './send-email/send-email.component';
@@ -22,7 +21,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   imports: [
     CommonModule,
     AccountRoutingModule,
-    ReactiveFormsModule,
     SharedModule
   ]
 })

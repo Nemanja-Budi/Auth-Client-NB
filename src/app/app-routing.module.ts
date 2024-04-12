@@ -12,7 +12,8 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthorizationGuard],
     children: [
-      { path: 'play', component: PlayComponent }
+      { path: 'play', component: PlayComponent },
+      { path: 'admin', loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule) },
     ]
   },
   { path: 'account', loadChildren: () => import('./account/account.module').then(module => module.AccountModule)},

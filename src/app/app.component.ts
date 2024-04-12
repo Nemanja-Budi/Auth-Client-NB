@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { AccountService } from './account/account.service';
+import { SharedService } from './shared/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,16 @@ export class AppComponent implements OnInit {
   title = 'Auth-client';
 
   accountService: AccountService = inject(AccountService);
+  sharedService: SharedService = inject(SharedService);
 
   private refreshUser(): void {
     const jwt = this.accountService.getJWT();
     if(jwt) {
       this.accountService.refreshUser(jwt).subscribe({
         next: _ => {},
-        error: _ => {
-          this.accountService.logout()
+        error: (error) => {
+          this.accountService.logout();
+          this.sharedService.showNotifications(false, 'Account blocked', error.error);
         }
       });
     } else {
